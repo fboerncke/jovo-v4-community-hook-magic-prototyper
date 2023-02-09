@@ -1,5 +1,5 @@
 {
-  "name": "jovo-v4-community-hook-magic-prototyper-very-beta",
+  "name": "jovo-v4-community-hook-magic-prototyper",
   "private": false,
   "version": "0.0.40",
   "description": "Voice Model and Code maintenance for prototypes made easy for Jovo",
@@ -12,13 +12,13 @@
   },
   "author": "Frank Börncke",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/fboerncke/jovo-v4-community-hook-magic-model#readme",
+  "homepage": "https://github.com/fboerncke/jovo-v4-community-hook-magic-prototyper#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fboerncke/jovo-v4-community-hook-magic-model.git"
+    "url": "git+https://github.com/fboerncke/jovo-v4-community-hook-magic-prototyper.git"
   },
   "bugs": {
-    "url": "https://github.com/fboerncke/jovo-v4-community-hook-magic-model/issues"
+    "url": "https://github.com/fboerncke/jovo-v4-community-hook-magic-prototyper/issues"
   },
   "dependencies": {
     "@jovotech/framework": "^4.5.0",
