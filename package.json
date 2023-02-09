@@ -1,8 +1,8 @@
 {
   "name": "jovo-v4-community-hook-magic-prototyper",
   "private": false,
-  "version": "0.0.40",
-  "description": "Voice Model and Code maintenance for prototypes made easy for Jovo",
+  "version": "0.0.42",
+  "description": "Jovo voice model and code maintenance for prototypes made easy",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
   "scripts": {

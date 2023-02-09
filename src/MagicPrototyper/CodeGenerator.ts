@@ -289,7 +289,7 @@ function getComponentHeader(
  **/
 
 import { Component, Intents, QuickReplyValue } from '@jovotech/framework';
-import { MagicPrototyperBaseComponent } from 'jovo-v4-community-hook-magic-prototyper-very-beta';
+import { MagicPrototyperBaseComponent } from 'jovo-v4-community-hook-magic-prototyper';
 
 ${dynamicImports}
 
