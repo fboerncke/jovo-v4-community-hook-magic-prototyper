@@ -1,0 +1,129 @@
+{
+  "invocation": {
+    "alexa": "define this value in file jovo.project.ts",
+    "googleAssistant": "define this value in file jovo.project.ts"
+  },
+  "version": "4.0",
+  "intents": {
+    "RepeatIntent": {
+      "alexa": {
+        "name": "AMAZON.RepeatIntent"
+      },
+      "phrases": [
+        "kann ich das noch einmal hören",
+        "nochmal",
+        "sag das noch einmal",
+        "wie bitte"
+      ]
+    },
+    "ThanksIntent": {
+      "phrases": [
+        "danke",
+        "dankeschön",
+        "vielen dank"
+      ]
+    },
+    "BadWordIntent": {
+      "phrases": [
+        "du bist blöd",
+        "du bist blöde",
+        "du bist dumm",
+        "du bist dämlich",
+        "du bist peinlich",
+        "du bist so blöd",
+        "du bist so blöde",
+        "du bist so dumm",
+        "du bist so dämlich",
+        "du bist so peinlich",
+        "du dumme nuss",
+        "du dumpfbacke",
+        "du idiot",
+        "dumme nuss",
+        "dumpfbacke",
+        "idiot"
+      ]
+    },
+    "YesIntent": {
+      "alexa": {
+        "name": "AMAZON.YesIntent"
+      },
+      "phrases": [
+        "ja",
+        "ja bitte",
+        "jaaa",
+        "jaaa bitte",
+        "klar"
+      ]
+    },
+    "NoIntent": {
+      "alexa": {
+        "name": "AMAZON.NoIntent"
+      },
+      "phrases": [
+        "nein",
+        "nein danke"
+      ]
+    },
+    "StopIntent": {
+      "alexa": {
+        "name": "AMAZON.StopIntent"
+      },
+      "dialogFlow": {
+        "events": [
+          {
+            "name": "actions_intent_CANCEL"
+          }
+        ]
+      },
+      "phrases": [
+        "Stop",
+        "Stopp"
+      ]
+    },
+    "CancelIntent": {
+      "alexa": {
+        "name": "AMAZON.CancelIntent"
+      },
+      "phrases": [
+        "Abbrechen"
+      ]
+    },
+    "HelpIntent": {
+      "alexa": {
+        "name": "AMAZON.HelpIntent"
+      },
+      "phrases": [
+        "Hilfe",
+        "Keine Ahnung",
+        "Unterstützung",
+        "Was kann ich hier machen",
+        "Was kann ich machen",
+        "Was nun",
+        "ich brauche Hilfe",
+        "ich brauche Unterstützung",
+        "ich weiss nicht",
+        "ich weiß nicht",
+        "wie funktioniert das",
+        "wie geht das hier"
+      ]
+    },
+    "StartOverIntent": {
+      "alexa": {
+        "name": "AMAZON.StartOverIntent"
+      },
+      "phrases": [
+        "beginne erneut",
+        "neustart",
+        "von vorne"
+      ]
+    }
+  },
+  "alexa": {
+    "interactionModel": {
+      "languageModel": {
+        "intents": []
+      }
+    }
+  },
+  "entityTypes": {}
+}

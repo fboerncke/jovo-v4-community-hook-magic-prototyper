@@ -1,0 +1,112 @@
+{
+  "invocation": {
+    "alexa": "define this value in file jovo.project.ts",
+    "googleAssistant": "define this value in file jovo.project.ts"
+  },
+  "version": "4.0",
+  "intents": {
+    "RepeatIntent": {
+      "alexa": {
+        "name": "AMAZON.RepeatIntent"
+      },
+      "phrases": [
+        "again",
+        "pardon",
+        "say this again"
+      ]
+    },
+    "ThanksIntent": {
+      "phrases": [
+        "thank you",
+        "thank you very much",
+        "thanks"
+      ]
+    },
+    "BadWordIntent": {
+      "phrases": [
+        "idiot",
+        "you are so dumb"
+      ]
+    },
+    "YesIntent": {
+      "alexa": {
+        "name": "AMAZON.YesIntent"
+      },
+      "phrases": [
+        "agreed",
+        "agreed please",
+        "clear",
+        "correct",
+        "correct please",
+        "fine",
+        "fine please",
+        "yes",
+        "yes please"
+      ]
+    },
+    "NoIntent": {
+      "alexa": {
+        "name": "AMAZON.NoIntent"
+      },
+      "phrases": [
+        "no",
+        "no thanks"
+      ]
+    },
+    "StopIntent": {
+      "alexa": {
+        "name": "AMAZON.StopIntent"
+      },
+      "dialogFlow": {
+        "events": [
+          {
+            "name": "actions_intent_CANCEL"
+          }
+        ]
+      },
+      "phrases": [
+        "Stop",
+        "Stopp"
+      ]
+    },
+    "CancelIntent": {
+      "alexa": {
+        "name": "AMAZON.CancelIntent"
+      },
+      "phrases": [
+        "Cancel"
+      ]
+    },
+    "HelpIntent": {
+      "alexa": {
+        "name": "AMAZON.HelpIntent"
+      },
+      "phrases": [
+        "Help",
+        "No clue",
+        "what can i do",
+        "what can i do now",
+        "what now"
+      ]
+    },
+    "StartOverIntent": {
+      "alexa": {
+        "name": "AMAZON.StartOverIntent"
+      },
+      "phrases": [
+        "from beginning",
+        "reset",
+        "reset application",
+        "restart"
+      ]
+    }
+  },
+  "alexa": {
+    "interactionModel": {
+      "languageModel": {
+        "intents": []
+      }
+    }
+  },
+  "entityTypes": {}
+}

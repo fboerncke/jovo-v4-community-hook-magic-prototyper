@@ -1,0 +1,302 @@
+{
+  "invocation": {
+    "alexa": "define this value in file jovo.project.ts",
+    "googleAssistant": "define this value in file jovo.project.ts"
+  },
+  "version": "4.0",
+  "sqliteDatabase": {
+    "sqliteDbFileName": "./some-demo-db.sqlite",
+    "maxGeneratedSlotSize": "500"
+  },
+  "generateForLocales": ["de", "en"],
+  "config": {
+    "ERROR_HANDLER_MESSAGE": {
+      "de": "[|Entschuldigung.|Das tut mir leid.] Da ist [|leider] etwas unerwartet schief gegangen. [|Das sollte nicht passieren.|Das hätte nicht passieren sollen.] [|Das tut mir [|sehr] leid]. [[|Ich bitte vielmals um] Entschuldigung]",
+      "en": "Something went wrong unexpectedly. "
+    },
+
+    "UNHANDLED_ERROR_HANDLER_MESSAGE": {
+      "de": "Das konnte ich nicht zuordnen. Probiere es bitte noch einmal oder bitte um Hilfe. ",
+      "en": "I did not understand that. Please try again or ask for help. "
+    },
+
+    "UNHANDLED_ERROR_HANDLER_QUICK_REPLIES": {
+      "de": ["Hilfe"],
+      "en": ["Help"]
+    }
+  },
+
+  "componentHeaderLines": [
+    "// this comes from MagicPrototyperMpdel.json file",
+    "// (c) Frank Börncke"
+  ],
+  "components": [
+    {
+      "componentName": "PizzaComponent",
+      "start": {
+        "startSpeech": {
+          "de": ["Hallo bei Happy Pizza. Mags Du gerne Pizza essen?"],
+          "en": ["Hello to Happy Pizza. Do you like Pizza?"]
+        },
+        "startText": {
+          "de": ["Hallo bei Happy Pizza. Mags Du gerne Pizza essen?"],
+          "en": ["Hello to Happy Pizza. Do you like Pizza?"]
+        },
+        "startReprompt": {
+          "de": ["Noch einmal: Mags Du gerne Pizza essen?"],
+          "en": ["ONce again: Do you like Pizza?"]
+        },
+        "startQuickReplies": {
+          "de": ["ja", "nein", "hilfe"],
+          "en": ["yes", "no", "help"]
+        }
+      },
+
+      "intents": {
+        "RepeatIntent": {
+          "alexa": {
+            "name": "AMAZON.RepeatIntent"
+          },
+          "phrases": {
+            "de": ["nochmal", "wie bitte", "sag das noch einmal", "kann ich das noch einmal hören"],
+            "en": ["again", "pardon", "say this again"]
+          }
+        },
+
+        "ThanksIntent": {
+          "phrases": {
+            "de": ["danke", "dankeschön", "vielen dank"],
+            "en": ["thanks", "thank you [|very much]"]
+          },
+          "speech": {
+            "de": ["[ Bitte! | Bitte sehr! | Bitteschön! | Gerne geschehen! ]"],
+            "en": ["[ You are welcome! | Welcome!]oice"]
+          },
+          "text": {
+            "de": ["[ Bitte! | Bitte sehr! | Bitteschön! | Gerne geschehen! ]"],
+            "en": ["[ You are welcome! | Welcome!]"]
+          },
+          "reprompt": {
+            "de": ["Was magst Du nun machen? Frage zum Beispiel nach Hilfe. "],
+            "en": ["What do you want to do know? You may ask for help. "]
+          }
+        },
+
+        "BadWordIntent": {
+          "phrases": {
+            "de": [
+              "[|du] [dumpfbacke|idiot|dumme nuss]",
+              "du bist [|so] [dumm|dämlich|peinlich|blöde|blöd]"
+            ],
+            "en": ["idiot", "you are so dumb"]
+          },
+          "speech": {
+            "de": [
+              "[ Das ist nicht nett von Dir. | Selber! | Dann guck erst mal in den Spiegel, bevor Du so etwas sagst! ]"
+            ],
+            "en": ["[ This is not nice! | Mind your language! ]"]
+          },
+          "text": {
+            "de": [
+              "[ Das ist nicht nett von Dir. | Selber! | Dann guck erst mal in den Spiegel, bevor Du so etwas sagst! ]"
+            ],
+            "en": ["[ This is not nice! | Mind your language! ]"]
+          },
+          "reprompt": {
+            "de": ["Was magst Du nun machen? Frage zum Beispiel nach Hilfe. "],
+            "en": ["What do you want to do know? You may ask for help. "]
+          }
+        },
+
+        "YesIntent": {
+          "alexa": {
+            "name": "AMAZON.YesIntent"
+          },
+          "phrases": {
+            "de": ["[ja|jaaa] [|bitte] ", "ja", "klar"],
+            "en": ["[fine|yes|correct|agreed] [|please] ", "yes", "clear"]
+          },
+          "speech": {
+            "de": ["Ich mag auch Pizza. "],
+            "en": ["I like Pizza too. "]
+          },
+          "text": {
+            "de": ["Ich mag auch Pizza. "],
+            "en": ["I like Pizza too. "]
+          },
+          "reprompt": {
+            "de": ["Was magst Du nun machen? Frage zum Beispiel nach Hilfe. "],
+            "en": ["What do you want to do know? You may ask for help. "]
+          }
+        },
+
+        "NoIntent": {
+          "alexa": {
+            "name": "AMAZON.NoIntent"
+          },
+          "phrases": {
+            "de": ["nein", "nein danke"],
+            "en": ["no", "no thanks"]
+          },
+          "speech": {
+            "de": ["Das ist in Ordnung. Nicht jeder mag Pizza. "],
+            "en": ["Thats fine. Not everybody likes Pizza. "]
+          },
+          "text": {
+            "de": ["Das ist in Ordnung. Nicht jeder mag Pizza. "],
+            "en": ["Thats fine. Not everybody likes Pizza. "]
+          },
+          "reprompt": {
+            "de": ["Was magst Du nun machen? Frage zum Beispiel nach Hilfe. "],
+            "en": ["What do you want to do know? You may ask for help. "]
+          }
+        },
+
+        "StopIntent": {
+          "alexa": {
+            "name": "AMAZON.StopIntent"
+          },
+          "dialogFlow": {
+            "events": [
+              {
+                "name": "actions_intent_CANCEL"
+              }
+            ]
+          },
+          "phrases": {
+            "de": ["Stop", "Stopp"],
+            "en": ["Stop", "Stopp"]
+          },
+          "speech": {
+            "de": ["Auf Wiedersehen"],
+            "en": ["Good Bye"]
+          },
+          "text": {
+            "de": ["Auf Wiedersehen"],
+            "en": ["Good Bye"]
+          }
+        },
+
+        "CancelIntent": {
+          "alexa": {
+            "name": "AMAZON.CancelIntent"
+          },
+          "phrases": {
+            "de": ["Abbrechen"],
+            "en": ["Cancel"]
+          },
+          "speech": {
+            "de": ["Auf Wiedersehen"],
+            "en": ["Good Bye"]
+          },
+          "text": {
+            "de": ["Auf Wiedersehen"],
+            "en": ["Good Bye"]
+          }
+        },
+
+        "HelpIntent": {
+          "alexa": {
+            "name": "AMAZON.HelpIntent"
+          },
+          "phrases": {
+            "de": [
+              "[|ich brauche] [Hilfe|Unterstützung]",
+              "wie funktioniert das",
+              "wie geht das hier",
+              "Was nun",
+              "Was kann ich [|hier] machen",
+              "Keine Ahnung",
+              "ich weiß nicht",
+              "ich weiss nicht"
+            ],
+            "en": ["Help", "what now", "what can i do [|now]", "No clue"]
+          },
+          "speech": {
+            "de": ["Frage zum Beispiel nach Hilfe. "],
+            "en": ["You may ask for help"]
+          },
+          "text": {
+            "de": ["Frage zum Beispiel nach Hilfe. "],
+            "en": ["You may ask for help"]
+          },
+          "reprompt": {
+            "de": ["Wie weiter"],
+            "en": ["What now"]
+          }
+        },
+        "StartOverIntent": {
+          "alexa": {
+            "name": "AMAZON.StartOverIntent"
+          },
+          "phrases": {
+            "de": ["von vorne", "neustart", "beginne erneut"],
+            "en": ["from beginning", "restart", "reset [|application]"]
+          }
+        }
+      },
+
+      "alexa": {
+        "interactionModel": {
+          "languageModel": {
+            "intents": []
+          }
+        }
+      },
+
+      "entityTypes": {}
+    },
+    {
+      "componentName": "TestComponent",
+      "start": {
+        "startSpeech": {
+          "de": ["Das ist eine Testcomponente. "],
+          "en": ["This is a test component. "]
+        },
+        "startText": {
+          "de": ["Das ist eine Testcomponente. "],
+          "en": ["This is a test component. "]
+        },
+        "startReprompt": {
+          "de": ["Was nun? "],
+          "en": ["What now? "]
+        }
+      },
+      "intents": {
+        "HelpIntent": {
+          "alexa": {
+            "name": "AMAZON.HelpIntent"
+          },
+          "phrases": {
+            "de": [
+              "[|ich brauche] [Hilfe|Unterstützung]",
+              "wie funktioniert das",
+              "wie geht das hier",
+              "Was nun",
+              "Was kann ich [|hier] machen",
+              "Keine Ahnung",
+              "ich weiss nicht"
+            ],
+            "en": ["Help", "what now", "what can i do [|now]", "No clue"]
+          },
+          "speech": {
+            "de": ["Frage zum Beispiel nach Hilfe. "],
+            "en": ["You may ask for help. "]
+          },
+          "text": {
+            "de": ["Frage zum Beispiel nach Hilfe. "],
+            "en": ["You may ask for help. "]
+          },
+          "reprompt": {
+            "de": ["Frage zum Beispiel nach Hilfe. "],
+            "en": ["You may ask for help. "]
+          },
+          "quickReplies": {
+            "de": ["Hilfe"],
+            "en": ["Help"]
+          }
+        }
+      }
+    }
+  ]
+}
